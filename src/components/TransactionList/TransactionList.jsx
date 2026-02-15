@@ -19,11 +19,19 @@ function TransactionList() {
   const deleteTransaction = (id) => {
     if (window.confirm('Opravdu chceš smazat tuto transakci?')) {
       // TODO: Fetch DELETE request na backend
-      
-      console.log('Mažu transakci s ID:', id);
-      // fetch(`http://localhost:8080/api/transactions/${id}`, { method: 'DELETE' })
-
-      
+      fetch(`http://localhost:8080/api/transactions/${id}`, {
+        method: 'DELETE'
+      })
+      .then(() => {
+        setTransactions(transactions.filter(t => t.id !== id));
+        alert("Transaction succesfully deleted!");
+        // window.location.reload();
+      })
+      .catch(error => {
+        console.error("Could not delete this transaction", error);
+        alert("Could not delete this transaction!");
+      })
+      console.log('Mažu transakci s ID:', id);      
     }
   };
 
