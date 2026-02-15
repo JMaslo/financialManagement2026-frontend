@@ -54,13 +54,13 @@ function TransactionList() {
             {transactions.map((transaction) => (
               <tr key={transaction.id} className={styles.row}>
                 <td className={styles.cell}>{transaction.date}</td>
-                <td className={styles.cell}>{transaction.category}</td>
+                <td className={styles.cell}>{transaction.description}</td>
                 <td className={`${styles.cell} ${transaction.isPositive ? styles.positive : styles.negative}`}>
                   {transaction.amount}
                 </td>
                 <td className={styles.cell}>
-                  <span className={`${styles.status} ${transaction.status === 'Completed' ? styles.statusCompleted : styles.statusPending}`}>
-                    {transaction.status}
+                  <span className={`${styles.statusCompleted}`}>
+                    Completed
                   </span>
                 </td>
                 <td className={styles.cell}>
