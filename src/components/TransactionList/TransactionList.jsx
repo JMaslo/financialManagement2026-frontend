@@ -17,7 +17,7 @@ function TransactionList() {
   }  
 
   const deleteTransaction = (id) => {
-    if (window.confirm('Opravdu chceš smazat tuto transakci?')) {
+    if (window.confirm('Do you really want to delete this transaction?')) {
       // TODO: Fetch DELETE request na backend
       fetch(`http://localhost:8080/api/transactions/${id}`, {
         method: 'DELETE'
@@ -31,7 +31,7 @@ function TransactionList() {
         console.error("Could not delete this transaction", error);
         alert("Could not delete this transaction!");
       })
-      console.log('Mažu transakci s ID:', id);      
+      console.log('Deleting transaction with ID:', id);      
     }
   };
 

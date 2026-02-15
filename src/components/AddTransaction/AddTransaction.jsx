@@ -22,14 +22,14 @@ function AddTransaction() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    console.log('State hodnoty:');
+    console.log('State values:');
     console.log('amount:', amount);
     console.log('description:', description);
     console.log('type:', type);
     console.log('date:', date);
 
     if (!amount || !description || !date) {
-      alert('Vyplň všechna pole!');
+      alert('Fill all fields!');
       return;
     }
 
@@ -40,7 +40,7 @@ function AddTransaction() {
       date: date
     };
 
-    console.log('Posílám na backend:', newTransaction);
+    console.log('Sending to backend:', newTransaction);
 
     fetch('http://localhost:8080/api/transactions', {
       method: 'POST',
@@ -57,7 +57,7 @@ function AddTransaction() {
       return response.json();
     })
     .then(savedTransaction => {
-      console.log('✅ Uloženo:', savedTransaction);
+      console.log('✅ Saved:', savedTransaction);
       setTransactions([...transactions, savedTransaction]);
 
       setAmount('');
@@ -70,7 +70,7 @@ function AddTransaction() {
       window.location.reload();
     })
     .catch(error => {
-      console.error('❌ Chyba:', error);
+      console.error('❌ Error:', error);
       alert('Could not add new transaction: ' + error.message);
     });
   };
@@ -101,7 +101,7 @@ function AddTransaction() {
           <input 
             type="text" 
             className={styles.input} 
-            placeholder="Nakup v obchode"
+            placeholder="School expense"
             value={description}
             onChange={(e) => {
               console.log('Description changed:', e.target.value);
