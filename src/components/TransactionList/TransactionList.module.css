@@ -1,0 +1,136 @@
+.card {
+  background-color: #2a3142;
+  border-radius: 24px;
+  padding: 40px;
+  margin-bottom: 20px;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(77, 124, 255, 0.2);
+}
+
+.title {
+  font-size: 28px;
+  font-weight: 600;
+  margin: 0 0 30px 0;
+  color: #ffffff;
+}
+
+.tableWrapper {
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.headerCell {
+  text-align: left;
+  font-size: 14px;
+  font-weight: 500;
+  color: #6b7280;
+  padding: 16px 20px;
+  border-bottom: 1px solid #3d4556;
+}
+
+.row {
+  transition: background-color 0.2s ease;
+}
+
+.row:hover {
+  background-color: rgba(77, 124, 255, 0.05);
+}
+
+.cell {
+  padding: 20px;
+  font-size: 18px;
+  color: #ffffff;
+  border-bottom: 1px solid #3d4556;
+}
+
+.positive {
+  color: #10b981;
+  font-weight: 600;
+}
+
+.negative {
+  color: #ef4444;
+  font-weight: 600;
+}
+
+.status {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.statusCompleted {
+  color: #10b981;
+}
+
+.statusPending {
+  color: #f59e0b;
+}
+
+/* DELETE BUTTON STYLES */
+.deleteBtn {
+  background-color: transparent;
+  border: 2px solid #ef4444;
+  border-radius: 8px;
+  padding: 8px 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.deleteBtn:hover {
+  background-color: #ef4444;
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(239, 68, 68, 0.3);
+}
+
+.deleteBtn:active {
+  transform: scale(0.95);
+}
+
+.deleteIcon {
+  width: 20px;
+  height: 20px;
+  color: #ef4444;
+  transition: color 0.3s ease;
+}
+
+.deleteBtn:hover .deleteIcon {
+  color: #ffffff;
+}
+
+@media (max-width: 768px) {
+  .card {
+    padding: 30px 20px;
+  }
+  
+  .title {
+    font-size: 24px;
+    padding: 0 10px;
+  }
+  
+  .headerCell,
+  .cell {
+    padding: 12px 10px;
+    font-size: 16px;
+  }
+  
+  .deleteBtn {
+    padding: 6px 10px;
+  }
+  
+  .deleteIcon {
+    width: 18px;
+    height: 18px;
+  }
+}
